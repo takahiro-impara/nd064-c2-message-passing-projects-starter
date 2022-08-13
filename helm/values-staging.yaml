@@ -1,0 +1,7 @@
+namespace:
+  name: staging
+dns:
+  api: udaconnect-api.staging.udacity.impara8.com
+  app: udaconnect.staging.udacity.impara8.com
+  connect: udaconnect-connect.staging.udacity.impara8.com
+  person: udaconnect-person.staging.udacity.impara8.com
