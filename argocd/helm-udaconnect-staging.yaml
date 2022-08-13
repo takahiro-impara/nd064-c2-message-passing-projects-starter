@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: udaconnect-prod
+  name: udaconnect-staging
   namespace: argocd
 spec:
   destination:

@@ -5,7 +5,7 @@ metadata:
     service: udaconnect-connection
   name: udaconnect-connection
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: {{ .Values.dns.connection }}
+    external-dns.alpha.kubernetes.io/hostname: {{ .Values.dns.connect }}
 spec:
   ports:
   - name: "5000"
