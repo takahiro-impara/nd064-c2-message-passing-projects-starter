@@ -49,3 +49,12 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/udaconnect-person:latest
+      -
+        name: Build and push location
+        uses: docker/build-push-action@v2
+        with:
+          context: ./modules/location
+          file: modules/connection/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udaconnect-location:latest

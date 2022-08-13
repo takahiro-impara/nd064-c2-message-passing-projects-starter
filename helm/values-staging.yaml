@@ -5,3 +5,4 @@ dns:
   app: udaconnect.staging.udacity.impara8.com
   connect: udaconnect-connection.staging.udacity.impara8.com
   person: udaconnect-person.staging.udacity.impara8.com
+  location: udaconnect-location.staging.udacity.impara8.com
