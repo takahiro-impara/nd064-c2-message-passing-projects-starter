@@ -1,0 +1,4 @@
+Design Considerations
+For endpoints invoked from the FrontEnd, REST API is selected for HTTP-based communication.
+Location data registration requires streaming processing, which requires high-speed data communication, so grpc was used.
+The queueing function was implemented using kafka in order to process without loss of data even in the case of a sudden increase in location data.
