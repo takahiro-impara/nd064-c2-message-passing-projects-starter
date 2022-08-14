@@ -1,8 +1,13 @@
 namespace:
   name: staging
 dns:
-  api: udaconnect-api.staging.udacity.impara8.com
   app: udaconnect.staging.udacity.impara8.com
-  connect: udaconnect-connection.staging.udacity.impara8.com
   person: udaconnect-person.staging.udacity.impara8.com
+  connect: udaconnect-connection.staging.udacity.impara8.com
   location: udaconnect-location.staging.udacity.impara8.com
+
+nodePort:
+  app: 30000
+  person: 30002
+  connection: 30003
+  location: 30004
