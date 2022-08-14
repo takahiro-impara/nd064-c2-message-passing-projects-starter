@@ -248,6 +248,8 @@ spec:
           
       securityContext:
         fsGroup: 1001
+      volumePermissions:
+        enabled: true
       initContainers:
         - name: volume-permissions
           image: docker.io/bitnami/bitnami-shell:11-debian-11-r22
