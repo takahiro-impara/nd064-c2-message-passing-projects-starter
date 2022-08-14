@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-data:
-  PERSON_NODEPORT: "30002"
-  APP_NODEPORT: "30000"
-  CONNECTION_NODEPORT: "30003"
-  LOCATION_NODEPORT: "30004"
-metadata:
-  name: db-env

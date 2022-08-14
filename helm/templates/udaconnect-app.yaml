@@ -11,7 +11,7 @@ spec:
   - name: "3000"
     port: 3000
     targetPort: 3000
-    nodePort: APP_NODEPORT
+    nodePort: 30000
   selector:
     service: udaconnect-app
   type: LoadBalancer
