@@ -589,5 +589,3 @@ spec:
         resources:
           requests:
             storage: "8Gi"
-  volumePermissions:
-    - enabled: true
