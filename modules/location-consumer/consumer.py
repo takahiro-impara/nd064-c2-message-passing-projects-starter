@@ -6,6 +6,7 @@ from app.udaconnect.models import Location
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import os
+import json
 
 from sqlalchemy.ext.declarative import declarative_base
 from kafka import KafkaConsumer
@@ -29,12 +30,15 @@ engine = create_engine(
 SessionClass = sessionmaker(engine)
 session = SessionClass()
 
-for message in consumer:
+for x in consumer:
+    message = json.loads(x.value.decode('utf-8'))
     new_location = Location()
     new_location.person_id = message["person_id"]
+    new_location.id = message["id"]
     new_location.creation_time = message["creation_time"]
     new_location.coordinate = ST_Point(
         message["latitude"], message["longitude"])
+    print(new_location)
     validation_results: Dict = LocationSchema().validate(new_location)
     if validation_results:
         print(f"Unexpected data format in payload: {validation_results}")
