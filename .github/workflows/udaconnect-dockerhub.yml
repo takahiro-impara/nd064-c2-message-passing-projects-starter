@@ -54,7 +54,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./modules/location-grpc
-          file: modules/connection/Dockerfile
+          file: modules/location-grpc/Dockerfile
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/udaconnect-location-grpc:latest
