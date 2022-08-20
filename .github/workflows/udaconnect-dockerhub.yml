@@ -45,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./modules/person
-          file: modules/connection/Dockerfile
+          file: modules/person/Dockerfile
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/udaconnect-person:latest
