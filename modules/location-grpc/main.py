@@ -12,6 +12,7 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 from sqlalchemy.ext.declarative import declarative_base
+from kafka import KafkaProducer
 
 
 class LocationServicer(location_pb2_grpc.LocationServiceServicer):
@@ -26,6 +27,10 @@ class LocationServicer(location_pb2_grpc.LocationServiceServicer):
             f"postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
         SessionClass = sessionmaker(engine)
         self.session = SessionClass()
+
+        self.TOPIC_NAME = 'locations'
+        KAFKA_SERVER = 'kafka:9092'
+        self.producer = KafkaProducer(bootstrap_servers=KAFKA_SERVER)
 
     def Get(self, request, context):
         id = request.id
@@ -58,7 +63,7 @@ class LocationServicer(location_pb2_grpc.LocationServiceServicer):
             "id": int(request.id),
             "latitude": request.latitude,
         }
-        print(request_value)
+        self.producer.send(self.TOPIC_NAME, request_value)
 
         return location_pb2.LocationMessage(**request_value)
 
