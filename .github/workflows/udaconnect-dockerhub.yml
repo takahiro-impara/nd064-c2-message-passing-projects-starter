@@ -58,3 +58,12 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/udaconnect-location-grpc:latest
+      -
+        name: Build and push location-consumer
+        uses: docker/build-push-action@v2
+        with:
+          context: ./modules/location-consumer
+          file: modules/location-consumer/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udaconnect-location-consumer:latest
