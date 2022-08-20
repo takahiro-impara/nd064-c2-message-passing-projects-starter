@@ -5,13 +5,13 @@ import grpc
 import location_pb2
 import location_pb2_grpc
 
-from app.udaconnect.models import db, Location
+from app.udaconnect.models import session, Location
 
 
 class LocationServicer(location_pb2_grpc.LocationServiceServicer):
     def Get(self, request, context):
         id = request.id
-        location = db.session.query(Location).filter(Location.id == id).first()
+        location = session.query(Location).filter(Location.id == id).first()
         print("Location: {}".format(location))
         if location is None:
             return location_pb2.LocationMessage(
