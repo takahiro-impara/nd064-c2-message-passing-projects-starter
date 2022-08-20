@@ -10,6 +10,7 @@ print("Sending sample payload...")
 
 channel = grpc.insecure_channel(
     "udaconnect-location.staging.udacity.impara8.com:5005")
+# "localhost:5005")
 stub = location_pb2_grpc.LocationServiceStub(channel)
 
 # Update this with desired payload
