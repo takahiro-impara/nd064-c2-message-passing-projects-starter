@@ -33,7 +33,7 @@ for x in consumer:
     message = json.loads(x.value.decode('utf-8'))
     person_id = message["person_id"]
     latitude = message["latitude"]
-    longitude = message["longitude "]
+    longitude = message["longitude"]
     insert = "INSERT INTO location (person_id, coordinate) VALUES ({}, ST_Point({}, {}))" \
         .format(person_id, latitude, longitude)
 
