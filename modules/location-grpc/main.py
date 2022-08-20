@@ -1,4 +1,5 @@
 import time
+import json
 from concurrent import futures
 
 import grpc
@@ -63,7 +64,8 @@ class LocationServicer(location_pb2_grpc.LocationServiceServicer):
             "id": int(request.id),
             "latitude": request.latitude,
         }
-        self.producer.send(self.TOPIC_NAME, request_value)
+        kafka_data = json.dumps(request_value).encode()
+        self.producer.send(self.TOPIC_NAME, kafka_data)
 
         return location_pb2.LocationMessage(**request_value)
 
