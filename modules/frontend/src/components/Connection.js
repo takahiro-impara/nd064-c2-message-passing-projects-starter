@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CONNECTION_URL from "./config";
 
 class Connection extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Connection extends Component {
     if (personId) {
       // TODO: endpoint should be abstracted into a config variable
       fetch(
-        `http://udaconnect-connection.staging.udacity.impara8.com:5000/api/persons/${personId}/connection?start_date=2020-01-01&end_date=2023-12-30&distance=5`
+        `${CONNECTION_URL}/api/persons/${personId}/connection?start_date=2020-01-01&end_date=2023-12-30&distance=5`
       )
         .then((response) => response.json())
         .then((connections) =>

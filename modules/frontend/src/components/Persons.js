@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import Connection from "./Connection";
+import PERSON_URL from "./config";
 
 class Persons extends Component {
   constructor(props) {
     super(props);
     // TODO: endpoint should be abstracted into a config variable
-    this.endpoint_url = "http://udaconnect-person.staging.udacity.impara8.com:5000/api/persons";
+    this.endpoint_url = `${PERSON_URL}/api/persons`;
     this.state = {
       persons: [],
       display: null,
