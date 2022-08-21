@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "0b5d6561-1e85-48f2-aecf-9f6fbfa3be74",
+		"name": "udaconnect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18597421"
+	},
+	"item": [
+		{
+			"name": "http://${person_host}:5000/api/persons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{person_host}}:{{port}}/api/persons",
+					"protocol": "http",
+					"host": [
+						"{{person_host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://${person_host}:5000/api/persons/{person_id}/connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{connection_host}}:{{port}}/api/persons/1/connection?start_date=2020-01-01&end_date=2023-12-30&distance=10",
+					"protocol": "http",
+					"host": [
+						"{{connection_host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"persons",
+						"1",
+						"connection"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2020-01-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2023-12-30"
+						},
+						{
+							"key": "distance",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://${person_host}:5000/api/persons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"last_name\": \"test_last\", \"first_name\": \"test_first\", \"company_name\": \"test.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{person_host}}:{{port}}/api/persons",
+					"protocol": "http",
+					"host": [
+						"{{person_host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"persons"
+					],
+					"query": [
+						{
+							"key": "first_name",
+							"value": "testfirst",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "company_name",
+							"value": "test",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://${person_host}:5000/api/persons/{person_id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{person_host}}:{{port}}/api/persons/1",
+					"protocol": "http",
+					"host": [
+						"{{person_host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"persons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "udaconnect-api.staging.udacity.impara8.com",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "port",
+			"value": "5000",
+			"type": "string"
+		},
+		{
+			"key": "person_host",
+			"value": "udaconnect-person.staging.udacity.impara8.com",
+			"type": "string"
+		},
+		{
+			"key": "connection_host",
+			"value": "udaconnect-connection.staging.udacity.impara8.com",
+			"type": "string"
+		}
+	]
+}
