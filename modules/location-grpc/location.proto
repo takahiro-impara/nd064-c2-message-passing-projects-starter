@@ -12,5 +12,5 @@ message LocationID {
 
 service LocationService {
     rpc Create(LocationMessage) returns (LocationMessage);
-    rpc Get(LocationID) returns (LocationMessage);
+    rpc Get(LocationID) returns (LocationID);
 }
