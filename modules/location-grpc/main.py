@@ -58,10 +58,8 @@ class LocationServicer(location_pb2_grpc.LocationServiceServicer):
     def Create(self, request, context):
 
         request_value = {
-            "creation_time": request.creation_time,
             "longitude": request.longitude,
             "person_id": int(request.person_id),
-            "id": int(request.id),
             "latitude": request.latitude,
         }
         kafka_data = json.dumps(request_value).encode()
