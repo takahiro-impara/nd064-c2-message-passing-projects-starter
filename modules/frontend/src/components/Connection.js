@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CONNECTION_URL from "./config";
+import { CONNECTION_URL } from "./config";
 
 class Connection extends Component {
   constructor(props) {

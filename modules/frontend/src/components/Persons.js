@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Connection from "./Connection";
-import PERSON_URL from "./config";
+import { PERSON_URL } from "./config";
 
 class Persons extends Component {
   constructor(props) {
