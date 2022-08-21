@@ -1,0 +1,21 @@
+# how to sample request over grpc
+1. mv to below folder
+  cd modules/location-grpc/;ls
+  Dockerfile              location.proto          main.py
+  app                     location_pb2.py         requirements.txt
+  getter.py               location_pb2_grpc.py    writter.py
+
+2. modify writter.py
+  Change the following values according to the location to be registered
+  location = location_pb2.LocationMessage(
+    longitude="37.5534409999999994",  # "37.55363",
+    person_id=6,
+    latitude="-153.2905240000000049",  # "-122.290883",
+)
+
+3. execute writter.py
+  python writter.py
+  Sending sample payload...
+  longitude: "37.5534409999999994"
+  person_id: 6
+  latitude: "-153.2905240000000049"
