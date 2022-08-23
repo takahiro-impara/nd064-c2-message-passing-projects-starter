@@ -21,7 +21,6 @@ class Connection extends Component {
 
   getConnections = (personId) => {
     if (personId) {
-      // TODO: endpoint should be abstracted into a config variable
       fetch(
         `${CONNECTION_URL}/api/persons/${personId}/connection?start_date=2020-01-01&end_date=2023-12-30&distance=5`
       )

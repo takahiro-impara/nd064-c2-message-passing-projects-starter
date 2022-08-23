@@ -5,7 +5,6 @@ import { PERSON_URL } from "./config";
 class Persons extends Component {
   constructor(props) {
     super(props);
-    // TODO: endpoint should be abstracted into a config variable
     this.endpoint_url = `${PERSON_URL}/api/persons`;
     this.state = {
       persons: [],
